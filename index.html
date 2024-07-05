@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .container-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .title {
+            width: 700px;
+            padding: 10px;
+            text-align: center;
+            background-color: green;
+            color: white;
+            border: 3px solid black;
+            margin-bottom: 10px; /* Gap between titles */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title:hover {
+            cursor: pointer;
+        }
+
+        .content {
+            width: 700px;
+            padding: 10px;
+            background-color: rgb(226, 154, 66);
+            margin-bottom: 10px;
+            margin-top: -10px; /* Remove gap between title and paragraph */
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-center">
+        <div>
+            <div id="q1" class="title">Here's a first title <i id="arrow1" class="bi bi-chevron-down arrow"></i></div>
+            <div id="a1" class="content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </div>
+
+            <div id="q2" class="title">Here's a second title <i id="arrow2" class="bi bi-chevron-down arrow"></i></div>
+            <div id="a2" class="content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </div>
+
+            <div id="q3" class="title">Here's a third title <i id="arrow3" class="bi bi-chevron-down arrow"></i></div>
+            <div id="a3" class="content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#a1, #a2, #a3").hide();
+
+            $("#q1").click(function () {
+                $("#a1").slideToggle();
+                $("#arrow1").toggleClass("rotate");
+            });
+
+            $("#q2").click(function () {
+                $("#a2").slideToggle();
+                $("#arrow2").toggleClass("rotate");
+            });
+
+            $("#q3").click(function () {
+                $("#a3").slideToggle();
+                $("#arrow3").toggleClass("rotate");
+            });
+        });
+    </script>
+</body>
+</html>
